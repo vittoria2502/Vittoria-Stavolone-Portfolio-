@@ -1,4 +1,4 @@
-import numpy as np
+import numpy as np 
 m = np.array([])  # array for average sector times
 t = np.array([])  # array for lap times
 
