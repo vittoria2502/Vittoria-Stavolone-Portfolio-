@@ -26,5 +26,30 @@ for j in range(sectors.shape[0]):  # iterate over rows (i.e., laps)
 # Setup: find fastest lap time; prepare arrays for baseline means and influential sectors
 minimum = min(t)  # minimum lap time (fastest lap)
 weak_sector_means = np.array([])  # mean sector times excluding fastest lap
-best_sector_vector = np.array([])  # index(es) of most influential sect
+best_sector_vector = np.array([])  # index(es) of most influential sector(s) in fastest lap
+
+# Block: locate the fastest lap
+for k in range(len(t)):
+    if t[k] == minimum:  # check if current lap is the fastest
+        print(f"The fastest lap is lap {k+1} with per-sector times: {sectors[k]} s")
+        min_lap_times = sectors[k]  # store sector times for the fastest lap
+        # Remove the fastest lap from the matrix (to compute averages over the weak laps)
+        sectors_with_no_fastest = np.delete(sectors, k, axis=0)
+
+# Block: compute per-sector means on the update matrix without fastest lap
+for s in range(sectors_with_no_fastest.shape[1]):  # iterate over columns
+    mean_val = sectors_with_no_fastest[:, s].mean()  # mean of each sector across remaining laps
+    weak_sector_means = np.append(weak_sector_means, mean_val)  # store the sector mean
+
+# Block: delta = min_lap_times – weak_sector_means (compute delta vs. baseline)
+delta = min_lap_times - weak_sector_means
+m = delta.min()  # the minimum (i.e., max improvement)
+
+# Block: find sector indices where the minimum delta occurs (key contributors)
+for a in range(len(delta)):
+    if delta[a] == m:  # check if this sector matches the minimum delta
+        best_sector_vector = np.append(best_sector_vector, a + 1)  # append best sector/s index/es
+print(f"In the best lap, i.e., lap {k+1}, the most influential sector/s is/are {best_sector_vector}.")
+
+
 
