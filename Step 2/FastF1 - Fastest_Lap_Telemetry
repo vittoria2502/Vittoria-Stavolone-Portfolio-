@@ -1,3 +1,7 @@
+"""
+This script extracts Charles Leclerc’s fastest lap telemetry (distance vs. speed) 
+for Bahrain, Monaco, and Silverstone, and visualizes them in comparative plots.
+"""
 from matplotlib import pyplot as plt
 import fastf1
 import fastf1.plotting
