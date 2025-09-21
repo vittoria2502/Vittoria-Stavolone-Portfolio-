@@ -3,8 +3,10 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 sns.set_theme(style="whitegrid") # pleasant-looking style
-# Note: The "sample.csv" file was already introduced earlier in the Pandas_Telemetry file.
-df = pd.read_csv("sample.csv") # load the CSV file
+
+# Load the CSV file
+# Check "sample.csv" file
+df = pd.read_csv("sample.csv") 
 df.head()
 
 # Note: The function convert_to_seconds, along with the creation of the
