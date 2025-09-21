@@ -1,3 +1,8 @@
+"""
+This script simulates lap speeds, checks which are above or below 
+the average, computes lap-to-lap differences, and identifies the 
+longest sequence of consecutive speed increases.
+"""
 import numpy as np
 
 # FUNCTION: search for laps with speed > average speed
