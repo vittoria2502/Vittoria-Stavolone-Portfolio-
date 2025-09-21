@@ -1,0 +1,61 @@
+from matplotlib import pyplot as plt
+import fastf1
+import fastf1.plotting
+
+fastf1.Cache.enable_cache('cache')
+
+# Configure FastF1 plotting
+fastf1.plotting.setup_mpl(misc_mpl_mods=False, color_scheme="fastf1")
+
+# Load three race sessions
+# 'R' = Race session type
+session_bah = fastf1.get_session(2025, 'Bahrain', 'R')
+session_bah.load()
+session_mon = fastf1.get_session(2025, 'Monaco', 'R')
+session_mon.load()
+session_sil = fastf1.get_session(2025, 'Silverstone', 'R')
+session_sil.load()
+
+# Block: Extract LEC's fastest lap and car telemetry for each GP
+fast_leclerc_bah = session_bah.laps.pick_driver("LEC").pick_fastest()
+lec_car_data_bah = fast_leclerc_bah.get_car_data().add_distance()
+
+fast_leclerc_mon = session_mon.laps.pick_driver("LEC").pick_fastest()
+lec_car_data_mon = fast_leclerc_mon.get_car_data().add_distance()
+
+fast_leclerc_sil = session_sil.laps.pick_driver("LEC").pick_fastest()
+lec_car_data_sil = fast_leclerc_sil.get_car_data().add_distance()
+
+# Block: Select telemetry series – Distance and Speed
+d_bah = lec_car_data_bah["Distance"]  # Bahrain distance
+s_bah = lec_car_data_bah["Speed"]     # Bahrain instantaneous speed
+d_mon = lec_car_data_mon["Distance"]  # Monaco distance
+s_mon = lec_car_data_mon["Speed"]     # Monaco instantaneous speed
+d_sil = lec_car_data_sil["Distance"]  # Silverstone distance
+s_sil = lec_car_data_sil["Speed"]     # Silverstone instantaneous speed
+
+# Plot telemetry → Distance vs Speed for each GP
+fig, ax = plt.subplots(3, 1, figsize=(18, 16))  # 3 rows, 1 column
+
+# 1) Bahrain
+ax[0].plot(d_bah, s_bah)
+ax[0].set_xlabel("Distance (m)")
+ax[0].set_ylabel("Speed (Km/h)")
+ax[0].set_title("LEC fastest lap Bahrain GP")
+
+# 2) Monaco
+ax[1].plot(d_mon, s_mon)
+ax[1].set_xlabel("Distance (m)")
+ax[1].set_ylabel("Speed (Km/h)")
+ax[1].set_title("LEC fastest lap Monaco GP")
+
+# 3) Silverstone
+ax[2].plot(d_sil, s_sil)
+ax[2].set_xlabel("Distance (m)")
+ax[2].set_ylabel("Speed (Km/h)")
+ax[2].set_title("LEC fastest lap Silverstone GP")
+
+# Layout & export
+plt.tight_layout()  # Avoid label overlap
+plt.savefig("Fastest_Lap_Telemetry.png", dpi=300)
+plt.show()
