@@ -1,3 +1,8 @@
+"""
+This script implements a Streamlit app that caches FastF1 data, lets you select Year/GP/Session, 
+loads or reopens processed laps, and shows three Plotly views (stint pace, tyre degradation, 
+fuel burn) filtered by driver.
+"""
 import streamlit as st
 import pandas as pd
 from pathlib import Path
