@@ -1,3 +1,8 @@
+"""
+Loads Bahrain qualifying, extracts Leclerc’s fastest-lap telemetry, 
+and plots three views: distance vs speed, distance vs throttle/brake, 
+and distance vs gear.
+"""
 from matplotlib import pyplot as plt
 import fastf1
 import fastf1.plotting
