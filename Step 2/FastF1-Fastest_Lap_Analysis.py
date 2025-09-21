@@ -1,3 +1,8 @@
+"""
+This script uses FastF1 to load race data, extract Charles Leclerc’s 
+fastest lap in Bahrain, Monaco, and Silverstone, and save all laps 
+from each race to CSV files.
+"""
 import fastf1 
 
 fastf1.Cache.enable_cache('cache')
