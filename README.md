@@ -7,6 +7,7 @@ Welcome to the official repository of my Formula 1 Project, a full immersion int
 ## 🔸 Step 1: Setup & Foundations
 
 "Building the garage"
+
 In this first step, I set up the entire environment:
 
 - Installed Python, Git, WSL (Ubuntu), Jupyter Lab, VS Code.
@@ -21,6 +22,7 @@ Deliverables:
 ## 🔸 Step 2: FastF1 & Telemetry Analysis
 
 "Wiring the car sensors to the ECU"
+
 In this step I worked with real Formula 1 data using the FastF1 Python library:
 
 - Downloaded and cached 3 sessions from the 2025 season
@@ -37,6 +39,7 @@ Deliverables:
 ## 🔸 Step 3: Data Pipelines & Streamlit Dashboards
 
 "Setting up the pit-wall dashboard"
+
 In this step I focused on building reusable code and interactive visualizations:
 
 - Modularized data loading (e.g. 'data_loader.py', 'plotting_prototypes.py')
@@ -53,9 +56,10 @@ Deliverables:
 - Local dashboards with real race data
 
 
-## 🔸 Week 4: Strategy Simulation with Monte Carlo
+## 🔸 Step 4: Strategy Simulation with Monte Carlo
 
 "Running pre-race strategy simulations"
+
 In the last step I implemented a Monte Carlo simulator to compare pit stop strategies:
 
 - Defined tyre model using degradation function: $lap time = base + a \sqrt{laps} + b \cdot laps$
