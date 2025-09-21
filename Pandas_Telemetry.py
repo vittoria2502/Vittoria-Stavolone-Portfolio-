@@ -8,8 +8,10 @@ def convert_to_seconds(time_str):
         return int(minutes) * 60 + float(seconds)
     except Exception:
         return np.nan
-
-df = pd.read_csv("sample2.csv", sep=";")  # Load CSV data
+ 
+# Load CSV data
+# Check "sample2.csv" file 
+df = pd.read_csv("sample2.csv", sep=";") 
 
 # Converting lap times from minutes to seconds to enable calculations
 df["LapTimeSeconds"] = df["LapTime"].apply(convert_to_seconds)
