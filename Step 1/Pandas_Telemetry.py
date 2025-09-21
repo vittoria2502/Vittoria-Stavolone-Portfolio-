@@ -1,5 +1,5 @@
 """
-Loads lap-time data, converts mm:ss to seconds, cleans invalid rows, 
+This script loads lap-time data, converts mm:ss to seconds, cleans invalid rows, 
 computes per-driver averages and worst laps, finds the overall 
 fastest lap, and adds a delta column vs. the session best.
 """
