@@ -1,3 +1,8 @@
+"""
+This script analyzes lap times by computing sector and lap averages, 
+finding the fastest lap, building a baseline without it, and identifying 
+the sectors that contributed most to the performance gain.
+"""
 import numpy as np 
 m = np.array([])  # array for average sector times
 t = np.array([])  # array for lap times
