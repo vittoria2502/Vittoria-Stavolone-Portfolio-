@@ -58,7 +58,7 @@ Deliverables:
 "Running pre-race strategy simulations"
 In the last step I implemented a Monte Carlo simulator to compare pit stop strategies:
 
-- Defined tyre model using degradation function: $lap_time = base + a \sqrt{laps} + b \dot laps$
+- Defined tyre model using degradation function: $lap time = base + a \sqrt{laps} + b \cdot laps$
 - Simulated race outcomes with randomized Safety Car events
 - Compared strategies like Soft-Soft-Medium vs Soft-Medium-Medium
 
