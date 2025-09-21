@@ -4,7 +4,7 @@
 Welcome to the official repository of my Formula 1 Project, a full immersion into motorsport data analysis and race strategy simulation. Over the course of 4 themed steps, I progressively built my technical skills and delivered structured outputs, merging my passion for Formula 1 with scientific programming.
 
 
-## 🧱 Step 1: Setup & Foundations
+## 🔸 Step 1: Setup & Foundations
 
 "Building the garage"
 In this first step, I set up the entire environment:
@@ -18,7 +18,7 @@ Deliverables:
 - Python Scripts using Data Analysis features 
 - Automatic testing pipeline using GitHub Actions (CI)
 
-## 🔌 Step 2: FastF1 & Telemetry Analysis
+## 🔸 Step 2: FastF1 & Telemetry Analysis
 
 "Wiring the car sensors to the ECU"
 In this step I worked with real Formula 1 data using the FastF1 Python library:
@@ -34,7 +34,7 @@ Deliverables:
 - Export of sessions and data as CSV
 
 
-## 📊 Step 3: Data Pipelines & Streamlit Dashboards
+## 🔸 Step 3: Data Pipelines & Streamlit Dashboards
 
 "Setting up the pit-wall dashboard"
 In this step I focused on building reusable code and interactive visualizations:
@@ -53,7 +53,7 @@ Deliverables:
 - Local dashboards with real race data
 
 
-## 🧠 Week 4: Strategy Simulation with Monte Carlo
+## 🔸 Week 4: Strategy Simulation with Monte Carlo
 
 "Running pre-race strategy simulations"
 In the last step I implemented a Monte Carlo simulator to compare pit stop strategies:
