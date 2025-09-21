@@ -1,3 +1,8 @@
+"""
+This script builds three Plotly visualizations for race analysis: stint pace (lap vs time, colored by compound), 
+tyre degradation (lap-in-stint vs time with OLS trendline), and fuel burn (mean lap time vs lap number with linear fit), 
+filtered by driver.
+"""
 import numpy as np
 import pandas as pd
 import plotly.express as px
