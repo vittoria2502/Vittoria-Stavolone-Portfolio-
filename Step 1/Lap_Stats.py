@@ -1,3 +1,8 @@
+"""
+This script preprocesses lap-time data, computes gaps to the best lap, 
+and visualizes results with two plots: a bar chart of delta vs. drivers 
+and a scatter plot of speed vs. lap time.
+"""
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
