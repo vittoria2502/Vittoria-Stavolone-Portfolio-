@@ -1,10 +1,9 @@
-# Vittoria-Stavolone-Portfolio
-# Formula 1 Python Pro Sprint – GitHub Repository
+# Formula 1 Python Pro Sprint
 
 Welcome to the official repository of my Formula 1 Project, a full immersion into motorsport data analysis and race strategy simulation. Over the course of 4 themed steps, I progressively built my technical skills and delivered structured outputs, merging my passion for Formula 1 with scientific programming.
 
 
-## 🔸 Step 1: Setup & Foundations
+## 🔸 Step 1: Setup and Foundations
 
 In this first step, I set up the entire environment:
 
@@ -17,7 +16,7 @@ Deliverables:
 - Python Scripts using Data Analysis features 
 - Automatic testing pipeline using GitHub Actions (CI)
 
-## 🔸 Step 2: FastF1 & Telemetry Analysis
+## 🔸 Step 2: FastF1 and Telemetry Analysis
 
 In this step I worked with real Formula 1 data using the FastF1 Python library:
 
@@ -32,7 +31,7 @@ Deliverables:
 - Export of sessions and data as CSV
 
 
-## 🔸 Step 3: Data Pipelines & Streamlit Dashboards
+## 🔸 Step 3: Data Pipelines and Streamlit Dashboards
 
 In this step I focused on building reusable code and interactive visualizations:
 
@@ -54,9 +53,10 @@ Deliverables:
 
 In the last step I implemented a Monte Carlo simulator to compare pit stop strategies:
 
-- Defined tyre model using degradation function: $lap time = base + a \sqrt{laps} + b \cdot laps$
+- Defined tyre model using degradation function: **$lap time = base + a \sqrt{laps} + b \cdot laps$**
 - Simulated race outcomes with randomized Safety Car events
-- Compared strategies like Soft-Soft-Medium vs Soft-Medium-Medium
+- Compared strategies like Soft-Medium vs Soft-Hard vs Medium-Hard
+- Compared strategies like Soft-Medium vs Soft-Medium with SC 
 
 Deliverables:
 
@@ -78,6 +78,6 @@ This project is a training sprint towards a data-driven role in **motorsport eng
 
 Every line of code, chart, and strategy contributes to building a solid foundation for F1 race data and vehicle performance analysis. Let the race begin!
 
-> Built by Vittoria Stavolone – Mathematician & Aspiring F1 Race Strategist
+> Built by Vittoria Stavolone – Mathematician & Aspiring Motorsport Analyst
 
 
