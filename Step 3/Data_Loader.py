@@ -1,3 +1,8 @@
+"""
+Loads FastF1 sessions, exports raw laps, converts lap-time strings to seconds, 
+builds stint-level features (lap index, average pace, delta), and saves a 
+processed CSV with a dynamic filename.
+"""
 import numpy as np
 import pandas as pd
 import fastf1 as f1
