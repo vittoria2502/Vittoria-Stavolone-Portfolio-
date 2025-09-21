@@ -1,3 +1,8 @@
+"""
+Compares Leclerc vs. Verstappen in Bahrain qualifying: loads fastest laps, 
+computes delta-time along distance, and plots both the gap trace and speed 
+traces with team colors.
+"""
 from matplotlib import pyplot as plt
 import fastf1
 import fastf1.plotting
