@@ -1,4 +1,4 @@
-# Formula 1 Python Pro Sprint
+# Formula 1 
 
 Welcome to the official repository of my Formula 1 Project, a full immersion into motorsport data analysis and race strategy simulation. Over the course of 4 themed steps, I progressively built my technical skills and delivered structured outputs, merging my passion for Formula 1 with scientific programming.
 
