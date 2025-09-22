@@ -64,7 +64,7 @@ def fuel_burn(df: pd.DataFrame, driver: str | None = None):
     # Compute mean laptime (group by lap number)
     grouped = df.groupby("LapNumber")["LapTimeSeconds"].mean().reset_index()
 
-    # Linear regression on the aggregated data (least squares fit):
+    # Linear regression on the aggregated data (least squares fit): check 'https://www.kaggle.com/code/okoyeannette/linear-regression-on-fuel-consumption-data'
     # np.polyfit(x, y, 1) estimates a straight line y = m*x + b that best fits
     # the relation between lap number (x) and mean lap time (y).
     # m = (slope)  -> how much lap time changes per additional lap
