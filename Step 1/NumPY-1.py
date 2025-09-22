@@ -1,6 +1,6 @@
 """
 This script analyzes lap times by computing sector and lap averages, 
-finding the fastest lap, building a baseline without it, and identifying 
+finding the fastest lap, and identifying 
 the sectors that contributed most to the performance gain.
 """
 import numpy as np 
@@ -46,12 +46,12 @@ for s in range(sectors_with_no_fastest.shape[1]):  # iterate over columns
     mean_val = sectors_with_no_fastest[:, s].mean()  # mean of each sector across remaining laps
     weak_sector_means = np.append(weak_sector_means, mean_val)  # store the sector mean
 
-# Block: delta = min_lap_times – weak_sector_means (compute delta vs. baseline)
+# Block: compute delta vs. baseline and extract the minimum (i.e., max improvement)
 delta = min_lap_times - weak_sector_means
-m = delta.min()  # the minimum (i.e., max improvement)
+n = delta.min()  # the minimum (i.e., max improvement)
 
 # Block: find sector indices where the minimum delta occurs (key contributors)
 for a in range(len(delta)):
-    if delta[a] == m:  # check if this sector matches the minimum delta
+    if delta[a] == n:  # check if this sector matches the minimum delta
         best_sector_vector = np.append(best_sector_vector, a + 1)  # append best sector/s index/es
 print(f"In the best lap, i.e., lap {k+1}, the most influential sector/s is/are {best_sector_vector}.")
