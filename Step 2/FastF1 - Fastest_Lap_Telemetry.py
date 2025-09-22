@@ -1,6 +1,6 @@
 """
 This script extracts Charles Leclerc’s fastest lap telemetry (distance vs. speed) 
-for Bahrain, Monaco, and Silverstone, and visualizes them in comparative plots.
+for Bahrain, Monaco, and Silverstone race, and visualizes them in comparative plots.
 """
 from matplotlib import pyplot as plt
 import fastf1
@@ -11,7 +11,7 @@ fastf1.Cache.enable_cache('cache')
 # Configure FastF1 plotting
 fastf1.plotting.setup_mpl(misc_mpl_mods=False, color_scheme="fastf1")
 
-# Load three race sessions
+# Block: Load three race sessions
 # 'R' = Race session type
 session_bah = fastf1.get_session(2025, 'Bahrain', 'R')
 session_bah.load()
