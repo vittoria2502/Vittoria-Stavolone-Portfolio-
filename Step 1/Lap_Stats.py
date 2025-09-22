@@ -27,14 +27,14 @@ def convert_to_seconds(time_str):
 df["LapTimeSeconds"] = df["LapTime"].apply(convert_to_seconds)
 best_time = df["LapTimeSeconds"].min()
 df["DeltaTime"] = df["LapTimeSeconds"] - best_time
-print(df.head(10))
+pd.concat([df.head(10), df.tail(10)])
 
 # Plot 1
 plt.figure(figsize=(8,4))
 plt.barh(df["Driver"], df["DeltaTime"], color="skyblue") # bar chart (barh = 90-degree rotated bar plot)
 plt.xlabel("Delta Time (s)")
 plt.ylabel("Drivers")
-plt.title("Delta vs Leader Lap 20 Bahrain GP 2023")
+plt.title("Delta vs Leader Lap 20 Bahrain GP 2023") # chosen Lap, GP and year
 plt.tight_layout() # prevents data from overlapping with labels
 plt.grid(True)
 plt.savefig("delta_bars.png", dpi=150)
