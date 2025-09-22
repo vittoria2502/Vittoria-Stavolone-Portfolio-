@@ -71,8 +71,9 @@ def fuel_burn(df: pd.DataFrame, driver: str | None = None, initial_fuel: float =
     # Average fuel consumption per lap (kg/lap), normalized on the usable fuel (100 kg)
     fuel_per_lap = initial_fuel / total_laps
 
-    # Estimate the effect of fuel weight on lap time:
+    # Block: Estimate the effect of fuel weight on lap time:
     # each kg of fuel burned reduces lap time by ~0.03 s (reference: Barcelona GP)
+    # check "https://www.reddit.com/r/F1Technical/comments/1eebmbz/what_difference_in_pace_would_15_kg_make/#:~:text=The%20rule%20of%20thumb%20is,seconds%20over%20the%20whole%20race."
     # (LapNumber - 1) ensures that at Lap 1 the correction is zero, since no fuel has been burned yet
     df["FuelWeightEffect"] = ((df["LapNumber"] - 1) * fuel_per_lap) * 0.03
     
