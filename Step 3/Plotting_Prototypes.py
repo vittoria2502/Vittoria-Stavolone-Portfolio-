@@ -34,7 +34,7 @@ def stint_pace(df: pd.DataFrame, driver: str | None = None):
     )
     return fig
 
-# Function: # Scatter plot – LapInStint vs LapTimeSeconds (with regression trendline)
+# Function: Scatter plot – LapInStint vs LapTimeSeconds (with regression trendline)
 def tire_degradation(df: pd.DataFrame, driver: str | None = None):
     # Filter laps only for the selected driver
     df = df[df.Driver.isin([driver])]
@@ -56,33 +56,34 @@ def tire_degradation(df: pd.DataFrame, driver: str | None = None):
     )
     return fig
 
-# Function: Scatter plot – LapNumber vs LapTimeSeconds (with regression line)
-def fuel_burn(df: pd.DataFrame, driver: str | None = None):
+
+# Function: Scatter plot – LapNumber vs FuelCorrectedLapTime (with regression trendline)
+def fuel_burn(df: pd.DataFrame, driver: str | None = None, initial_fuel: float = 100.0):
     # Filter laps only for the selected driver
     df = df[df.Driver.isin([driver])]
 
-    # Compute mean laptime (group by lap number)
-    grouped = df.groupby("LapNumber")["LapTimeSeconds"].mean().reset_index()
+    # Note: cars start with 103.5 kg but only 100 kg are burned during the race
+    total_fuel = 103.5  
 
-    # Linear regression on the aggregated data (least squares fit): check 'https://www.kaggle.com/code/okoyeannette/linear-regression-on-fuel-consumption-data'
-    # np.polyfit(x, y, 1) estimates a straight line y = m*x + b that best fits
-    # the relation between lap number (x) and mean lap time (y).
-    # m = (slope)  -> how much lap time changes per additional lap
-    # b = (intercept) -> baseline lap time when LapNumber = 0 (line’s intercept).
-    m, b = np.polyfit(grouped.LapNumber, grouped.LapTimeSeconds, 1)
+    # Total number of laps completed in the session
+    total_laps = df["LapNumber"].max()
 
-    # Predicted values from the linear model for each lap:
-    # Create a new column "Fit" = m*LapNumber + b so that the DataFrame contains:
-    # – actual measurements (LapTimeSeconds)
-    # – estimated trend from the regression (Fit)
-    # This allows comparison, plotting both real vs. fitted, or analyzing residuals.
-    grouped["Fit"] = m * grouped.LapNumber + b  # regression fit
+    # Average fuel consumption per lap (kg/lap), normalized on the usable fuel (100 kg)
+    fuel_per_lap = initial_fuel / total_laps
 
+    # Estimate the effect of fuel weight on lap time:
+    # each kg of fuel burned reduces lap time by ~0.03 s (reference: Barcelona GP)
+    # (LapNumber - 1) ensures that at Lap 1 the correction is zero, since no fuel has been burned yet
+    df["FuelWeightEffect"] = ((df["LapNumber"] - 1) * fuel_per_lap) * 0.03
+    
+    # Compute fuel-corrected lap time by removing the benefit from fuel burn
+    df["FuelCorrectedLapTime"] = df["LapTimeSeconds"] - df["FuelWeightEffect"]
     fig = px.scatter(
-        grouped,
-        x="LapNumber",               # x-axis: race lap index
-        y="LapTimeSeconds",          # y-axis: lap time (seconds)
-        trendline="ols",             # fit a regression line
-        title=f"Fuel-Burn – {driver}",
+        df,
+        x="LapNumber",
+        y="FuelCorrectedLapTime",
+        color="Driver",
+        trendline="ols",  # adds an OLS regression line to highlight residual performance trends
+        title=f"Fuel Burn - {driver}"
     )
     return fig
