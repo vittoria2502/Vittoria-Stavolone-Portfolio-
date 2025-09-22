@@ -27,7 +27,7 @@ def load_session(year: int, gp: str, sess: str):
     return laps, session
 
 
-# Block: Time conversion
+# Block: Time conversions
 # Function: Convert a time string like '0 days 00:01:38.693000' to seconds
 def convert_to_seconds(time_str):
     # Treat missing values up front
@@ -80,7 +80,7 @@ def prepare_lap_features(
     # Average pace string (m:ss.mmm) per (Driver, Stint)
     df["StintAvgPace"] = df["StintAvgPaceSeconds"].apply(convert_to_minutes)
 
-    # Delta vs stint average (keep in seconds for analysis)
+    # Delta vs stint average (in seconds)
     df["DeltaToStintAvgSeconds"] = df["LapTimeSeconds"] - df["StintAvgPaceSeconds"]
 
     # Persist results (dynamic name if metadata is provided)
