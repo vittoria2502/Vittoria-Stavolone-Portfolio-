@@ -70,4 +70,6 @@ if "data" in st.session_state:
     with tab3:
         # Single-driver fuel-burn trend
         drv = st.selectbox("Driver", sorted(df.Driver.unique()), key="f_drv")
-        st.plotly_chart(fuel_burn(df, drv), use_container_width=True)
+        fuel = 100 
+        st.plotly_chart(fuel_burn(df, drv, fuel), use_container_width=True)
+   
