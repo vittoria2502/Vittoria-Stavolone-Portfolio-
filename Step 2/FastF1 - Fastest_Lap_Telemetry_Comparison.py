@@ -1,7 +1,7 @@
 """
-Compares Leclerc vs. Verstappen in Bahrain qualifying: loads fastest laps, 
-computes delta-time along distance, and plots both the gap trace and speed 
-traces with team colors.
+This script compares Leclerc vs. Verstappen in Bahrain qualifying: loads fastest laps, 
+computes delta-time along distance, and plots both the gap trace and speed traces with 
+team colors.
 """
 from matplotlib import pyplot as plt
 import fastf1
@@ -32,7 +32,7 @@ rbr_color = fastf1.plotting.get_team_color(fast_verstappen['Team'], session=sess
 # Delta time calculation
 delta_time, ref_tel, compare_tel = utils.delta_time(fast_leclerc, fast_verstappen)
 
-# Plot telemetry — Delta and Distance vs Speed comparison
+# Block: Plot telemetry — Delta and Distance vs Speed comparison
 fig, ax = plt.subplots(2, 1, figsize=(18, 16))  # 2 rows, 1 column
 
 # 1) Delta line (gap vs distance)
