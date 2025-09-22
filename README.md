@@ -1,6 +1,6 @@
 # Formula 1 
 
-Welcome to the official repository of my Formula 1 Project, a full immersion into motorsport data analysis and race strategy simulation. Over the course of 4 themed steps, I progressively built my technical skills and delivered structured outputs, merging my passion for Formula 1 with scientific programming.
+Welcome to the official repository of my Formula 1 project, a full immersion into motorsport data analysis and race strategy simulation. Over the course of 4 themed steps, I progressively built my technical skills and delivered structured outputs, merging my passion for Formula 1 with scientific programming.
 
 
 ## 🔸 Step 1: Setup and Foundations
@@ -14,7 +14,7 @@ In this first step, I set up the entire environment:
 Deliverables:
 
 - Python Scripts using Data Analysis features 
-- Automatic testing pipeline using GitHub Actions (CI)
+
 
 ## 🔸 Step 2: FastF1 and Telemetry Analysis
 
@@ -78,6 +78,6 @@ This project is a training sprint towards a data-driven role in **motorsport eng
 
 Every line of code, chart, and strategy contributes to building a solid foundation for F1 race data and vehicle performance analysis. Let the race begin!
 
-> Built by Vittoria Stavolone – Mathematician & Aspiring Motorsport Analyst
+> Built by Vittoria Stavolone – Mathematician 
 
 
