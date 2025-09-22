@@ -1,12 +1,12 @@
 """
-This script loads lap-time data, converts mm:ss to seconds, cleans invalid rows, 
-computes per-driver averages and worst laps, finds the overall 
-fastest lap, and adds a delta column vs. the session best.
+This script loads lap-time data, converts 'mm:ss' to seconds, cleans invalid 
+rows, computes per-driver averages and worst laps, finds the overall fastest 
+lap, and adds a delta column vs. the session best.
 """
 import pandas as pd
 import numpy as np
 
-# FUNCTION: convert 'minutes:seconds' format to total seconds
+# FUNCTION: Convert 'minutes:seconds' format to total seconds
 def convert_to_seconds(time_str):
     try:
         minutes, seconds = time_str.split(":")
@@ -31,10 +31,10 @@ print(pd.concat([df.head(10), df.tail(10)]))
 average = df.groupby("Driver").agg(AverageLapTime=("LapTimeSeconds", "mean"))
 print(average)
 
-# Global best lap: time, driver, and lap number
-best_time = df["LapTimeSeconds"].min()                    # Fastest lap time overall
-best_driver = df[df["LapTimeSeconds"] == best_time]["Driver"].values[0]   # Corresponding driver
-best_lap = df[df["LapTimeSeconds"] == best_time]["Lap"].values[0]         # Corresponding lap number
+# Block: Global best lap - time, driver, and lap number
+best_time = df["LapTimeSeconds"].min() # fastest lap time overall
+best_driver = df[df["LapTimeSeconds"] == best_time]["Driver"].values[0]   # corresponding driver
+best_lap = df[df["LapTimeSeconds"] == best_time]["Lap"].values[0]         # corresponding lap number
 print(f"The overall best time is by {best_driver}: {best_time:.3f}s on lap {best_lap}")
 
 # Per-driver worst (slowest) lap time
@@ -43,4 +43,4 @@ print(worst_time_per_driver)
 
 # Add a delta column: gap to the session's best lap
 df["Delta"] = df["LapTimeSeconds"] - best_time
-print(df.head())
+print(pd.concat([df.head(10), df.tail(10)]))
