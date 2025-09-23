@@ -13,7 +13,7 @@ In this first step, I set up the entire environment:
 
 Deliverables:
 
-- Python Scripts using Data Analysis features 
+- Python scripts using Data Analysis libraries 
 
 
 ## 🔸 Step 2: FastF1 and Telemetry Analysis
@@ -51,7 +51,7 @@ Deliverables:
 
 ## 🔸 Step 4: Strategy Simulation with Monte Carlo
 
-In the last step I implemented a Monte Carlo simulator to compare pit stop strategies:
+In the last step I implemented a Monte Carlo simulator to analyze the duration of a race with different strategies and interferences (pit-stop and SC):
 
 - Defined tyre model using degradation function: **$lap time = base + a \sqrt{laps} + b \cdot laps$**
 - Simulated race outcomes with randomized Safety Car events
@@ -60,14 +60,13 @@ In the last step I implemented a Monte Carlo simulator to compare pit stop strat
 
 Deliverables:
 
-- Notebook 'Quick-Strat-MC.ipynb'
-- Strategy simulation engine with plots
-- README.md with markdown-based strategy analysis
+- Notebook 'Race_Strategy_Monte_Carlo_Analysis.ipynb'
+- Race analysis with plots
 
 
 ## 🏁 Final Goal
 
-This project is a training sprint towards a data-driven role in **motorsport engineering**, combining:
+This project is a training sprint towards **motorsport engineering**, combining:
 
 - Python for data science
 - Git/GitHub for version control
@@ -76,7 +75,7 @@ This project is a training sprint towards a data-driven role in **motorsport eng
 - Streamlit for dashboards
 - Simulation for race strategy 
 
-Every line of code, chart, and strategy contributes to building a solid foundation for F1 race data and vehicle performance analysis. Let the race begin!
+Every line of code, chart, and strategy contributes to building a solid foundation for F1 race data and vehicle performance analysis. 
 
 > Built by Vittoria Stavolone – Mathematician 
 
