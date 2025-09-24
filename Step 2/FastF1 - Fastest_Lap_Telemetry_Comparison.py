@@ -36,7 +36,7 @@ delta_time, ref_tel, compare_tel = utils.delta_time(fast_leclerc, fast_verstappe
 fig, ax = plt.subplots(2, 1, figsize=(18, 16))  # 2 rows, 1 column
 
 # 1) Delta line (gap vs distance)
-ax[0].plot(ref_tel['Distance'], delta_time, color=rbr_color, label="Gap to LEC")
+ax[0].plot(ref_tel['Distance'], delta_time, color=rbr_color, label="Delta to LEC")
 ax[0].set_xlabel("Distance (m)")
 ax[0].set_ylabel("Delta (s)")
 ax[0].set_title("Delta Verstappen vs Leclerc Bahrain GP - Qualifying")
