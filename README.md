@@ -9,7 +9,7 @@ In this first step, I set up the entire environment:
 
 - Installed Python, Git, WSL (Ubuntu), Jupyter Lab, VS Code.
 - Created the folder structure for the sprint.
-- Learned Python Libraries basics (**NumPY, Pandas, Matplotlib, Seaborn**).
+- Learned Python Libraries basics (**NumPY, Pandas, Matplotlib, Seaborn**)
 
 Deliverables:
 
@@ -61,7 +61,7 @@ In the last step I implemented a Monte Carlo simulator to analyze the duration o
 Deliverables:
 
 - Notebook 'Race_Strategy_Monte_Carlo_Analysis.ipynb'
-- Race analysis with plots
+- Race time analysis with plots
 
 
 ## 🏁 Final Goal
