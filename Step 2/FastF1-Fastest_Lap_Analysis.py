@@ -1,6 +1,6 @@
 """
 This script uses FastF1 to load race data, extract Charles Leclerc’s 
-fastest lap in Bahrain, Monaco, and Silverstone race, and save all laps 
+fastest lap in Bahrein, Monaco, and Silverstone race, and save all laps 
 from each race to CSV files.
 """
 import fastf1 
@@ -9,19 +9,19 @@ fastf1.Cache.enable_cache('cache')
 
 # Load race sessions
 # 'R' = Race session type
-session_bah = fastf1.get_session(2025, 'Bahrain', 'R')
+session_bah = fastf1.get_session(2025, 'Bahrein', 'R')
 session_bah.load()
 session_mon = fastf1.get_session(2025, 'Monaco', 'R')
 session_mon.load()
 session_sil = fastf1.get_session(2025, 'Silverstone', 'R')
 session_sil.load()
 
-# Block: Extract fastest lap for Leclerc in Bahrain GP
-laps_bah = session_bah.laps                        # full lap data for Bahrain
+# Block: Extract fastest lap for Leclerc in Bahrein GP
+laps_bah = session_bah.laps                        # full lap data for Bahrein
 leclerc_laps_bah = laps_bah.pick_driver("LEC")     # filter only Leclerc’s laps
 fastest_bah = leclerc_laps_bah.pick_fastest()      # fastest lap of that driver
-print("Bahrain Race – LEC fastest lap:\n", fastest_bah)
-laps_bah.to_csv("bahrain_2025_laps.csv", index=False)  # save all laps to CSV: "https://drive.google.com/file/d/1CcbIXF-UFSGeM3NUSP7UBcCh5nimdLLG/view?usp=sharing"
+print("Bahrein Race – LEC fastest lap:\n", fastest_bah)
+laps_bah.to_csv("bahrein_2025_laps.csv", index=False)  # save all laps to CSV: "https://drive.google.com/file/d/1CcbIXF-UFSGeM3NUSP7UBcCh5nimdLLG/view?usp=sharing"
 
 # Block: Extract fastest lap for Leclerc in Monaco GP
 laps_mon = session_mon.laps
