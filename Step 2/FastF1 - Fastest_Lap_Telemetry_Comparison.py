@@ -1,5 +1,5 @@
 """
-This script compares Leclerc vs. Verstappen in Bahrain qualifying: loads fastest laps, 
+This script compares Leclerc vs. Verstappen in Bahrein qualifying: loads fastest laps, 
 computes delta-time along distance, and plots both the gap trace and speed traces with 
 team colors.
 """
