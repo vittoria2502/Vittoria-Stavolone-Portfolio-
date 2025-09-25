@@ -60,5 +60,5 @@ ax[1].legend()
 
 # Layout & export
 plt.subplots_adjust(hspace=0.4)
-plt.savefig("Fastest_Lap_Telemetry_Comparison.png", dpi=300)
+plt.savefig("Telemetry_Comparison.png", dpi=300)
 plt.show()
