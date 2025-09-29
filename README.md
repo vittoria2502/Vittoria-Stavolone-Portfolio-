@@ -9,7 +9,7 @@ In this first step, I set up the entire environment:
 
 - Installed Python, Git, WSL (Ubuntu), Jupyter Lab, VS Code.
 - Created the folder structure for the sprint.
-- Learned Python Libraries basics (**NumPY, Pandas, Matplotlib, Seaborn**)
+- Learned Python Libraries basics (**NumPy, Pandas, Matplotlib, Seaborn**)
 
 Deliverables:
 
